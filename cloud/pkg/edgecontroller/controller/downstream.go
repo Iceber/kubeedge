@@ -583,8 +583,8 @@ func (dc *DownstreamController) initLocating() error {
 	if err != nil {
 		return err
 	}
-	var status string
 	for _, node := range nodes.Items {
+		var status string
 		for _, nsc := range node.Status.Conditions {
 			if nsc.Type == "Ready" {
 				status = string(nsc.Status)
